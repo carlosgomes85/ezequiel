@@ -43,6 +43,25 @@
       var romanceLink = romanceCopy.querySelector('.text-link');
       romanceCopy.insertBefore(romanceQuote, romanceLink);
     }
+    var secondaryGrid = document.querySelector('.secondary-grid');
+    if (secondaryGrid && secondaryGrid.children.length > 1) secondaryGrid.insertBefore(secondaryGrid.children[1], secondaryGrid.children[0]);
+    var otherCards = document.querySelectorAll('.others-grid article');
+    if (otherCards.length) {
+      var zaradanCard = otherCards[otherCards.length - 1];
+      var zaradanTitle = zaradanCard.querySelector('h3');
+      var zaradanText = zaradanCard.querySelector('p');
+      if (zaradanTitle && zaradanText) { zaradanTitle.textContent = 'Zaradan'; zaradanText.textContent = 'Chefe da guarda de Babiorne e homem de confiança de Nabur, Zaradan é rígido, experiente e difícil de intimidar.'; }
+    }
+    var othersSection = document.querySelector('.others-section');
+    if (othersSection && !document.querySelector('.servas-section')) {
+      var servasSection = document.createElement('section');
+      servasSection.className = 'servas-section section';
+      servasSection.innerHTML = '<div class="section-tag">04 <span>As servas-silentes</span></div><article class="servas-card"><div class="servas-image" role="img" aria-label="Ilustração das servas-silentes"></div><div class="character-copy"><span class="world-label">As intercessoras</span><h2>Servas-silentes</h2><p>Silenciosas. Cobertas. Misteriosas.</p><p>As servas-silentes caminham entre o povo sem dizer uma palavra. Mulheres intercessoras que fizeram votos de silêncio, castidade e dedicação absoluta à Divina Trindade. Elas atravessam cidades marcadas pela dor, recolhendo pedidos de oração e carregando consigo as esperanças de um mundo ferido.</p><p>Em meio ao calor do cerrado e ao medo constante dos ossos-vivos, seus mantos longos e seus passos calmos se tornaram um símbolo de fé e reverência. Enquanto tudo ao redor parece ruir, elas seguem em silêncio, lembrando que ainda há espaço para oração, esperança e resistência.</p><p>Em um mundo dominado pelo medo, até o silêncio pode ser um ato de fé.</p></div></article>';
+      var othersTag = othersSection.querySelector('.section-tag');
+      if (othersTag) othersTag.innerHTML = '05 <span>Outros personagens</span>';
+      servasSection.querySelector('.section-tag').innerHTML = '04 <span>As servas-silentes</span>';
+      othersSection.parentNode.insertBefore(servasSection, othersSection);
+    }
     toggle.addEventListener('click', function () { var open = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', String(!open)); menu.hidden = open; header.classList.toggle('menu-open', !open); });
     menu.addEventListener('click', function (event) { if (event.target.closest('a')) { toggle.setAttribute('aria-expanded', 'false'); menu.hidden = true; header.classList.remove('menu-open'); } });
   });
