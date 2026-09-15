@@ -296,6 +296,7 @@ main#inicio{display:flex;flex-direction:column}.hero{order:1}.book-section{order
   margin:-35px 0 -90px;
   position:relative;
   z-index:1;
+  pointer-events:none;
   background:
     linear-gradient(180deg,#17100d 0%,rgba(23,16,13,.72) 18%,rgba(23,16,13,.12) 48%,#17100d 100%),
     linear-gradient(rgba(23,16,13,.24),rgba(23,16,13,.24)),
