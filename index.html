@@ -40,9 +40,11 @@
         <p class="kicker">Um romance distópico de C. E. Gomes</p>
         <h1>Ezequiel <small>e o mundo de</small> <span class="hero-title-final">Ossos Vivos</span></h1>
         <p class="lead">Quando tudo parece morto, ainda existe uma razão para continuar caminhando.</p>
-        <div class="hero-actions"><a class="text-link" href="#livro">Entrar neste mundo <i class="bi bi-arrow-down"
-              aria-hidden="true"></i></a><a class="button button-primary" href="https://a.co/d/0dIUBMt1" target="_blank"
-            rel="noopener noreferrer">Disponível na Amazon <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        <div class="hero-actions">
+          <!--a class="text-link" href="#livro">Entrar neste mundo <i class="bi bi-arrow-down"
+              aria-hidden="true"></i></a-->
+              <a class="button button-primary hero-buy" href="https://a.co/d/0dIUBMt1" target="_blank"
+            rel="noopener noreferrer"><i class="bi bi-amazon" aria-hidden="true"></i> Disponível na Amazon <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="hero-art">
@@ -181,25 +183,9 @@
               target="_blank" rel="noopener noreferrer">Karen</a></cite>
         </blockquote>
       </div>
-    </section>
-
-    <section class="reviews-more section" aria-label="Mais avaliações">
-      <div class="review-grid">
-        <blockquote>
-          <div>★★★★★</div>
-          <p>“Prende a atenção do princípio ao fim. Não conseguia parar de ler. Bem ansioso por mais alguns livros do
-            autor.”</p><cite><a
-              href="https://www.amazon.com.br/portal/customer-reviews/srp/-/RLHWGQXT6VJW8/ref=cm_cr_dp_d_rvw_ttl?_encoding=UTF8&amp;ie=UTF8"
-              target="_blank" rel="noopener noreferrer">Igor</a></cite>
-        </blockquote>
-        <blockquote>
-          <div>★★★★★</div>
-          <p>“Autor que reúne muita criatividade; adrenalina e reflexão. Leitura certa e inteligente. Parabéns!”</p>
-          <cite><a
-              href="https://www.amazon.com.br/portal/customer-reviews/srp/-/R303PC4YIU3TMO/ref=cm_cr_dp_d_rvw_ttl?_encoding=UTF8&amp;ie=UTF8"
-              target="_blank" rel="noopener noreferrer">Cliente Kindle</a></cite>
-        </blockquote>
-      </div>
+      <a class="reviews-more-link" href="https://www.amazon.com.br/portal/customer-reviews/B0GTSL6Y2M/" target="_blank" rel="noopener noreferrer">
+        Ver mais avaliações na Amazon <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
     </section>
 
     <section class="closing section">
@@ -250,7 +236,6 @@
             Gran-Reitor</cite>
         </blockquote>
       </div>
-      <div class="pawns-transition" aria-hidden="true"></div>
     </section>
     <section class="universe-explore section">
       <div class="section-tag">05 <span>Explore o universo</span></div>
@@ -260,19 +245,10 @@
             acontece</span><strong>Lugares <i class="bi bi-arrow-up-right"></i></strong><small>Yerushalam, Babiorne, o
             cerrado e os caminhos entre a vida e a morte.</small></a></div>
     </section>
+    <div class="pawns-transition" aria-hidden="true"></div>
   </main>
   <footer><span>© 2026 C. E. Gomes</span><a href="https://www.canticosdemachina.com.br/" target="_blank"
       rel="noopener noreferrer">Conheça também Cânticos de Machina <i class="bi bi-arrow-up-right"></i></a></footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const mainGrid = document.querySelector('#avaliacoes .review-grid');
-      const extraGrid = document.querySelector('.reviews-more .review-grid');
-      if (mainGrid && extraGrid) {
-        mainGrid.append(...extraGrid.children);
-        extraGrid.parentElement.remove();
-      }
-    });
-  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const authorLink = document.querySelector('.author .text-link');
