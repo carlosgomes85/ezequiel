@@ -21,7 +21,7 @@
       if (currentPage && currentPage !== 'index.html' && link.href.toLowerCase().endsWith(currentPage)) link.setAttribute('aria-current', 'page');
     });
     var toggle = document.createElement('button');
-    toggle.className = 'menu-toggle'; toggle.type = 'button'; toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-controls', 'mobile-menu'); toggle.innerHTML = '<span></span><span></span><span></span><b>Menu</b>';
+    toggle.className = 'menu-toggle'; toggle.type = 'button'; toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-controls', 'mobile-menu'); toggle.setAttribute('aria-label', 'Abrir menu de navegação'); toggle.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><b>Menu</b>';
     var menu = document.createElement('div'); menu.className = 'mobile-menu'; menu.id = 'mobile-menu'; menu.hidden = true;
     function addLink(href, label) { var link = document.createElement('a'); link.href = href; link.textContent = label; menu.appendChild(link); }
     if (isHome) addLink('#livro', 'O livro'); else addLink('index.html', 'Início');
@@ -34,7 +34,7 @@
     header.append(toggle, menu);
     document.querySelectorAll('.universe-explore-grid a').forEach(function (card) { card.setAttribute('aria-label', card.querySelector('strong') ? 'Explorar ' + card.querySelector('strong').textContent.trim() : 'Explorar o universo'); });
     document.querySelectorAll('.image-placeholder').forEach(function (image) { image.setAttribute('role', 'img'); var label = image.querySelector('span'); if (label) image.setAttribute('aria-label', label.textContent.trim()); });
-    toggle.addEventListener('click', function () { var open = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', String(!open)); menu.hidden = open; header.classList.toggle('menu-open', !open); });
+    toggle.addEventListener('click', function () { var open = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', String(!open)); toggle.setAttribute('aria-label', open ? 'Abrir menu de navegação' : 'Fechar menu de navegação'); menu.hidden = open; header.classList.toggle('menu-open', !open); });
     menu.addEventListener('click', function (event) { if (event.target.closest('a')) { toggle.setAttribute('aria-expanded', 'false'); menu.hidden = true; header.classList.remove('menu-open'); } });
   });
 }());
