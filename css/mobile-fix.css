@@ -317,3 +317,68 @@ main#inicio{display:flex;flex-direction:column}.hero{order:1}.book-section{order
     grid-template-columns:repeat(2,minmax(0,1fr)) !important;
   }
 }
+
+/* Tablets: evita a compressão do cabeçalho e mantém a capa na proporção correta. */
+@media (min-width: 701px) and (max-width: 1050px) {
+  .site-header {
+    padding: 18px 2.8vw;
+    gap: 18px;
+  }
+
+  .site-header .brand {
+    flex: 0 1 230px;
+    min-width: 190px;
+  }
+
+  .site-header .brand em::before {
+    font-size: .52rem;
+    letter-spacing: .1em;
+  }
+
+  .site-header .brand em::after {
+    font-size: .82rem;
+  }
+
+  .site-header nav {
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: clamp(12px, 1.8vw, 22px);
+  }
+
+  .site-header nav a,
+  .site-header .header-buy {
+    font-size: .62rem;
+    letter-spacing: .08em;
+    white-space: nowrap;
+  }
+
+  .site-header .header-buy {
+    flex: 0 0 auto;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, .9fr);
+  }
+
+  .hero-art {
+    width: min(43vw, 470px);
+    height: min(65vw, 680px);
+    top: 108px;
+  }
+
+  footer {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 28px;
+    padding: 26px 4vw;
+  }
+
+  footer a {
+    display: block;
+    max-width: 100%;
+    white-space: normal;
+  }
+}

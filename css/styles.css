@@ -61,3 +61,4 @@
   .sample-text h2:first-child{margin-top:2em}
   .sample-cta{width:92vw;padding:85px 8px 100px}
 }
+ .hero-review{max-width:470px;margin:0 0 30px;padding:16px 0 0 18px;border-left:2px solid #f4c542}.hero-review p{margin:0;color:#eadcc3;font:italic .88rem/1.65 var(--serif)}.hero-review cite{display:block;margin-top:9px;color:#c7bba8;font:.62rem var(--sans);font-style:normal;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.hero-review cite a{color:#f4c542;text-decoration:none}.hero-review cite a:hover{text-decoration:underline}@media(max-width:700px){.hero-review{max-width:390px;margin-bottom:26px;padding-top:13px}.hero-review p{font-size:.82rem}}
