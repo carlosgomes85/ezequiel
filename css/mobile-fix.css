@@ -20,6 +20,14 @@
   background-size: cover;
 }
 
+.site-header .brand-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
 .character-grid .image-placeholder::after {
   content: "";
   position: absolute;
@@ -62,7 +70,7 @@
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 700px) {
   .reviews .review-grid { grid-template-columns: 1fr; }
 }
 
@@ -94,7 +102,7 @@
 @media (min-width: 701px) {
   .site-header { padding: 24px 3vw; }
   .site-header .brand { gap: 11px; }
-  .site-header .brand > span { width: 36px; height: 36px; font-size: .78rem; }
+  .site-header .brand-logo { width: 56px; height: 56px; }
   .site-header .brand em { gap: 5px; }
   .site-header .brand em::before { font-size: .6rem; letter-spacing: .14em; }
   .site-header .brand em::after { font-size: .98rem; letter-spacing: .11em; }
@@ -163,6 +171,18 @@
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(18px);
+    transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+  }
+
+  .mobile-floating-buy.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .mobile-floating-buy:hover,

@@ -43,8 +43,8 @@
   <a class="skip-link" href="#inicio">Pular para o conteúdo principal</a>
   <div class="grain" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Ezequiel e o Mundo de Ossos Vivos — início"><span>EZ</span><em>Ezequiel
-        e o Mundo de Ossos Vivos</em></a>
+    <a class="brand" href="#inicio" aria-label="Ezequiel e o Mundo de Ossos Vivos — início"><img class="brand-logo"
+        src="img/logoEzequiel.png" alt=""><em><small>Ezequiel e o mundo de</small><strong>Ossos Vivos</strong></em></a>
     <nav aria-label="Navegação principal">
       <a href="#livro">O livro</a><a href="universo.html">Universo</a><a href="#citacoes">Citações</a><a
         href="#avaliacoes">Avaliações</a><a href="#autor">Autor</a>
@@ -62,8 +62,9 @@
       <div class="hero-copy">
         <p class="kicker">Um romance distópico de C. E. Gomes</p>
         <h1>Ezequiel <small>e o mundo de</small> <span class="hero-title-final">Ossos Vivos</span></h1>
+        <p class="hero-tagline">Uma história de zumbis que, em vez de horror, vai te encher de esperança.</p>
         <p class="lead">Quando Noemi é infectada, Ezequiel atravessa um Brasil dominado pelos ossos-vivos em busca de
-          uma cura — antes que ela deixe de ser humana.</p>
+          uma cura, antes que ela perca de vez sua humanidade.</p>
         <blockquote class="hero-review">
           <p>“Uma proposta diferente, que consegue unir fé, Bíblia, aventura e ficção.”</p>
           <cite><a
@@ -95,7 +96,7 @@
           <p>Quando Noemi é infectada, um antídoto incompleto a transforma em algo único: uma semizumbi presa entre a
             humanidade e a monstruosidade. Ezequiel se recusa a aceitar que ela está condenada.</p>
           <p>Para salvá-la, o jovem médico precisa fugir do regime opressor de Babiorne, atravessar o cerrado e voltar a
-            Yerushalam em busca da cura. A pesquisa deixada por seu pai pode ser a última chance de recuperar Noemi — e
+            Yerushalam em busca da cura. A pesquisa deixada por seu pai pode ser a última chance de recuperar Noemi, e
             talvez toda a humanidade.</p>
         </div>
         <div class="book-facts structured-facts">
@@ -114,7 +115,7 @@
     </section>
 
     <section class="verse-section section" aria-labelledby="verse-title">
-      <h2 id="verse-title">Acaso pode um mundo de ossos-vivos voltar a viver? Ezequiel acreditou.</h2>
+      <h2 id="verse-title">Pode um mundo de ossos-vivos voltar a viver?<br><span class="verse-title-highlight">Ezequiel acreditou.</span></h2>
       <div class="verse-card">
         <blockquote>
           <p>Então ele me disse: ‘Profetize a estes ossos e diga: <br>“<strong>Ossos secos</strong>, ouçam a palavra do
@@ -132,7 +133,7 @@
         <div class="romance-heading">
           <h2>Um amor que enfrenta<br><i>o impossível.</i></h2>
           <p>Em meio às muralhas, à poeira e ao medo, Ezequiel e Noemi encontram um no outro um lugar de abrigo. O que
-            começa como insistência se transforma em parceria, afeto e uma promessa de continuar juntos — mesmo quando o
+            começa como insistência se transforma em parceria, afeto e uma promessa de continuar juntos, mesmo quando o
             mundo parece determinado a separá-los.</p>
         </div>
         <div class="romance-lower">
@@ -295,6 +296,15 @@
         authorLink.target = '_blank';
         authorLink.rel = 'noopener noreferrer';
         authorLink.innerHTML = 'Conhecer minha bio <i class="bi bi-arrow-up-right"></i>';
+      }
+
+      const floatingBuy = document.querySelector('.mobile-floating-buy');
+      const hero = document.querySelector('.hero');
+      if (floatingBuy && hero && 'IntersectionObserver' in window) {
+        const heroObserver = new IntersectionObserver(function (entries) {
+          floatingBuy.classList.toggle('is-visible', !entries[0].isIntersecting);
+        }, { threshold: 0.05 });
+        heroObserver.observe(hero);
       }
     });
   </script>
