@@ -402,3 +402,153 @@ main#inicio{display:flex;flex-direction:column}.hero{order:1}.book-section{order
     white-space: normal;
   }
 }
+
+/* Hero: uma única coluna de leitura, com a prova social como apoio ao CTA. */
+.hero{
+  min-height:clamp(740px,100vh,900px);
+  grid-template-columns:minmax(0,1fr) minmax(340px,.78fr);
+  padding-top:142px;
+  padding-bottom:84px;
+}
+.hero-copy{
+  display:flex;
+  flex-direction:column;
+  max-width:570px;
+}
+.hero-copy>.kicker{order:1;margin-bottom:18px}
+.hero-copy>h1{order:2;max-width:560px}
+.hero-copy>.hero-tagline{order:3;max-width:480px;margin-top:24px}
+.hero-copy>.lead{order:4;max-width:440px;margin:20px 0 28px;font-size:1.04rem;line-height:1.65}
+.hero-copy>.hero-actions{order:5}
+.hero-copy>.hero-review{order:6}
+.hero-actions{margin:0}
+.hero-actions .hero-buy{min-width:300px}
+.hero-review{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:12px;
+  max-width:445px;
+  margin:22px 0 0;
+  padding:14px 0 0;
+  border-top:1px solid rgba(247,234,208,.2);
+  border-left:0;
+}
+.hero-review::before{
+  content:"LEITORES";
+  grid-row:1 / span 2;
+  color:#f4c542;
+  font-size:.57rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+}
+.hero-review p{font-size:.79rem;line-height:1.55}
+.hero-review cite{margin-top:6px}
+.hero-art{
+  top:116px;
+  right:clamp(4vw,5.5vw,7vw);
+  width:min(35vw,500px);
+  height:calc(100% - 168px);
+}
+
+@media(max-width:700px){
+  .hero{display:flex;min-height:0;padding:126px 6vw 56px}
+  .hero-copy{max-width:none}
+  .hero-copy>.kicker{margin-bottom:15px;font-size:.64rem;letter-spacing:.16em}
+  .hero-copy>h1{max-width:100%;font-size:clamp(2.65rem,12.6vw,4.6rem);line-height:.94}
+  .hero-copy>h1 small{max-width:250px;margin:15px 0 9px;font-size:.68rem;letter-spacing:.15em}
+  .hero-copy>.hero-tagline{max-width:340px;margin-top:20px;font-size:1rem;line-height:1.48}
+  .hero-copy>.lead{max-width:350px;margin:19px 0 24px;font-size:.94rem;line-height:1.62}
+  .hero-actions .hero-buy{min-width:0;padding:15px 17px}
+  .hero-review{max-width:100%;margin-top:20px;padding-top:13px}
+  .hero-review p{font-size:.76rem;line-height:1.5}
+  .hero-art{width:min(100%,360px);height:auto;aspect-ratio:2 / 3;margin:8px auto 0}
+}
+
+/* Título do hero: três níveis de leitura, sem perder o impacto da capa. */
+.hero h1{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  line-height:.86;
+  text-shadow:0 4px 22px rgba(0,0,0,.2);
+}
+.hero h1 small{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:max-content;
+  max-width:100%;
+  margin:19px 0 12px;
+  color:#d7c8ae;
+  font-size:clamp(.68rem,1.05vw,.88rem);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.22em;
+}
+.hero h1 small::before,
+.hero h1 small::after{
+  content:"";
+  display:block;
+  width:clamp(20px,3vw,42px);
+  height:1px;
+  background:rgba(244,197,66,.72);
+}
+.hero-title-final{
+  display:block;
+  color:#f4c542;
+  font-size:.82em;
+  letter-spacing:-.065em;
+  text-shadow:0 0 28px rgba(244,197,66,.14);
+}
+
+@media(max-width:700px){
+  .hero h1{line-height:.9}
+  .hero h1 small{
+    gap:9px;
+    margin:16px 0 10px;
+    font-size:.63rem;
+    letter-spacing:.17em;
+  }
+  .hero h1 small::before,
+  .hero h1 small::after{width:24px}
+  .hero-title-final{font-size:.86em;letter-spacing:-.07em}
+}
+
+/* Chamada e sinopse: leitura em dois ritmos, abaixo do título. */
+.hero-copy>.hero-tagline{
+  position:relative;
+  max-width:465px;
+  margin-top:28px;
+  padding:2px 0 2px 20px;
+  border-left:2px solid #f4c542;
+  color:#f7ead0;
+  font-size:clamp(1rem,1.45vw,1.2rem);
+  font-style:italic;
+  font-weight:700;
+  line-height:1.5;
+}
+.hero-copy>.lead{
+  max-width:420px;
+  margin:22px 0 30px;
+  color:#cfc1a8;
+  font-size:1rem;
+  line-height:1.75;
+}
+
+@media(max-width:700px){
+  .hero-copy>.hero-tagline{
+    max-width:345px;
+    margin-top:23px;
+    padding-left:15px;
+    font-size:.97rem;
+    line-height:1.5;
+  }
+  .hero-copy>.lead{
+    max-width:345px;
+    margin:19px 0 25px;
+    font-size:.92rem;
+    line-height:1.68;
+  }
+}
