@@ -552,3 +552,42 @@ main#inicio{display:flex;flex-direction:column}.hero{order:1}.book-section{order
     line-height:1.68;
   }
 }
+
+/* A capa mantém respiro nas laterais e sua proporção completa em telas pequenas. */
+@media(max-width:700px){
+  .hero{overflow:visible;}
+
+  .hero-art{
+    position:relative;
+    align-self:center;
+    flex:none;
+    width:min(82vw,340px);
+    height:unset!important;
+    aspect-ratio:unset!important;
+    margin:30px auto 24px;
+    overflow:visible;
+  }
+
+  .hero-art img{
+    display:block;
+    width:100%;
+    height:auto!important;
+    max-width:100%;
+    object-fit:contain;
+  }
+
+  .hero-art::after{display:none;}
+}
+
+/* Em larguras intermediárias, o quadro acompanha a proporção 2:3 da capa. */
+@media(min-width:701px) and (max-width:1050px){
+  .hero-art{
+    height:auto;
+    aspect-ratio:2 / 3;
+  }
+
+  .hero-art img{
+    height:100%;
+    object-fit:contain;
+  }
+}
