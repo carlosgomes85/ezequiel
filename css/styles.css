@@ -63,4 +63,11 @@
 }
  .hero-review{max-width:470px;margin:0 0 30px;padding:16px 0 0 18px;border-left:2px solid #f4c542}.hero-review p{margin:0;color:#eadcc3;font:italic .88rem/1.65 var(--serif)}.hero-review cite{display:block;margin-top:9px;color:#c7bba8;font:.62rem var(--sans);font-style:normal;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.hero-review cite a{color:#f4c542;text-decoration:none}.hero-review cite a:hover{text-decoration:underline}@media(max-width:700px){.hero-review{max-width:390px;margin-bottom:26px;padding-top:13px}.hero-review p{font-size:.82rem}}
 .hero-tagline{max-width:510px;margin:28px 0 0;color:#f4c542;font:italic 700 clamp(1.05rem,1.8vw,1.35rem)/1.45 var(--serif);letter-spacing:-.02em;text-wrap:pretty}.lead{margin-top:20px}@media(max-width:700px){.hero-tagline{max-width:350px;margin-top:22px;font-size:1.05rem}.lead{margin-top:22px}}
+
+/* Book trailer */
+.book-trailer{border-bottom:1px solid var(--line)}
+.book-trailer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,320px);align-items:center;justify-content:space-between;gap:clamp(42px,10vw,130px)}
+.book-trailer-copy{max-width:590px}.book-trailer-copy .kicker{margin-bottom:18px}.book-trailer-copy h2{margin:0;color:var(--ink);font:700 clamp(2rem,4.2vw,3.8rem)/1.1 var(--serif);letter-spacing:-.06em}.book-trailer-copy h2 i{color:#f4c542;font-style:normal}.book-trailer-copy>p:not(.kicker){max-width:485px;margin:24px 0 30px;color:var(--muted);font:1.05rem/1.75 var(--serif)}
+.book-trailer-video{width:min(100%,320px);justify-self:end;overflow:hidden;border:1px solid rgba(244,197,66,.45);background:#0c0908;box-shadow:0 20px 46px rgba(0,0,0,.28),0 0 40px rgba(244,197,66,.08)}.book-trailer-video iframe{display:block;width:100%;aspect-ratio:9/16;border:0}
+@media(max-width:700px){.book-trailer-grid{grid-template-columns:1fr;gap:36px}.book-trailer-copy>p:not(.kicker){margin:20px 0 26px;font-size:1rem}.book-trailer-video{width:min(100%,330px);justify-self:start}}
 .verse-title-highlight{color:#f4c542;font-style:italic}
