@@ -299,7 +299,7 @@ main#inicio{display:flex;flex-direction:column}.hero{order:1}.book-section{order
 @media(max-width:700px){
   .hero{
     background-position:center center;
-    background-image:url("../img/chapada_touro.jpg");
+    background-image:url("../img/chapada_touro_vertical.jpg");
   }
   .hero:after{
     display:block;
