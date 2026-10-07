@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ezequiel e o Mundo de Ossos Vivos, romance distópico de C. E. Gomes.">
   <meta name="theme-color" content="#17100d">
+  <meta name="color-scheme" content="dark">
   <meta name="author" content="C. E. Gomes">
   <meta property="og:type" content="book">
   <meta property="og:locale" content="pt_BR">
@@ -13,7 +14,10 @@
   <meta property="og:description"
     content="Romance distópico cristão sobre amor, fé e sobrevivência em um Brasil pós-apocalíptico.">
   <meta property="og:image" content="img/capa-ezequiel.jpg">
+  <meta property="og:image:alt" content="Capa do livro Ezequiel e o Mundo de Ossos Vivos">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ezequiel e o Mundo de Ossos Vivos | C. E. Gomes">
+  <meta name="twitter:description" content="Romance distópico cristão sobre amor, fé e sobrevivência em um Brasil pós-apocalíptico.">
   <title>Ezequiel e o Mundo de Ossos Vivos | C. E. Gomes</title>
   <link rel="icon" type="image/jpeg" href="img/capa-ezequiel.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -313,14 +317,6 @@
         authorLink.innerHTML = 'Conhecer minha bio <i class="bi bi-arrow-up-right"></i>';
       }
 
-      const floatingBuy = document.querySelector('.mobile-floating-buy');
-      const hero = document.querySelector('.hero');
-      if (floatingBuy && hero && 'IntersectionObserver' in window) {
-        const heroObserver = new IntersectionObserver(function (entries) {
-          floatingBuy.classList.toggle('is-visible', !entries[0].isIntersecting);
-        }, { threshold: 0.05 });
-        heroObserver.observe(hero);
-      }
     });
   </script>
   <script src="js/nav.js"></script>
