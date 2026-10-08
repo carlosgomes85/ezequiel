@@ -640,3 +640,52 @@ main#inicio{display:flex;flex-direction:column}.hero{order:1}.book-section{order
     text-shadow:0 2px 10px rgba(23,16,13,.75);
   }
 }
+
+/* A chamada acompanha a capa, ficando logo abaixo dela no hero. */
+.hero-visual{
+  position:absolute;
+  z-index:1;
+  top:116px;
+  right:clamp(4vw,5.5vw,7vw);
+  /* Reserva altura para a chamada abaixo da capa dentro do hero. */
+  width:min(35vw,400px,calc(66.667vh - 146.667px));
+}
+.hero-visual .hero-art{
+  position:relative;
+  top:auto;
+  right:auto;
+  width:100%;
+  height:auto;
+  aspect-ratio:2 / 3;
+}
+.hero-visual .hero-tagline{
+  max-width:100%;
+  margin:18px 0 0;
+  padding:2px 0 2px 16px;
+  border-left:2px solid #f4c542;
+  color:#f7ead0;
+  font:italic 700 clamp(.9rem,1.25vw,1.1rem)/1.5 var(--serif);
+  text-wrap:pretty;
+}
+
+@media(max-width:700px){
+  .hero-visual{
+    position:relative;
+    top:auto;
+    right:auto;
+    align-self:center;
+    width:min(82vw,340px);
+    margin:24px auto;
+  }
+  .hero-visual .hero-art{
+    width:100%;
+    height:auto!important;
+    margin:0;
+  }
+  .hero-visual .hero-tagline{
+    margin-top:18px;
+    padding-left:15px;
+    font-size:.97rem;
+    line-height:1.5;
+  }
+}
