@@ -43,7 +43,9 @@
       buyObserver.observe(opening);
     }
     if (!reducedMotion && 'IntersectionObserver' in window) {
-      var targets = document.querySelectorAll('main section, main article, .quote-stack blockquote, .review-grid blockquote');
+      // A long-form reading article can never occupy enough of the viewport to
+      // satisfy the reveal threshold, leaving its entire contents invisible.
+      var targets = document.querySelectorAll('main section, main article:not(.sample-book), .quote-stack blockquote, .review-grid blockquote');
       targets.forEach(function (element, index) { if (element.closest('.hero')) return; element.classList.add('reveal'); element.style.setProperty('--reveal-delay', Math.min((index % 4) * 55, 165) + 'ms'); });
       var observer = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('is-revealed'); observer.unobserve(entry.target); } }); }, { threshold: .12, rootMargin: '0px 0px -7% 0px' });
       targets.forEach(function (element) { observer.observe(element); });
