@@ -1,0 +1,154 @@
+/* Camada final de composição: ritmo, contraste e superfícies consistentes. */
+:root {
+  --page-gutter: max(5.5vw, calc((100vw - 1240px) / 2));
+  --panel: rgba(40, 25, 18, .78);
+  --panel-line: rgba(244, 197, 66, .24);
+  --soft-gold: rgba(244, 197, 66, .09);
+}
+
+body {
+  background:
+    radial-gradient(circle at 82% 5%, rgba(227, 121, 47, .12), transparent 26rem),
+    radial-gradient(circle at 8% 45%, rgba(244, 197, 66, .045), transparent 24rem),
+    var(--dark);
+}
+
+.site-header {
+  padding: 18px var(--page-gutter);
+  border-bottom-color: rgba(247, 234, 208, .1);
+}
+
+.site-header nav { gap: clamp(18px, 2.4vw, 36px); }
+.site-header nav a, .header-buy { letter-spacing: .1em; }
+.site-header.is-scrolled { backdrop-filter: blur(14px); }
+
+.section {
+  width: min(89vw, var(--content-width));
+  padding-top: clamp(78px, 10vw, 142px);
+  padding-bottom: clamp(78px, 10vw, 142px);
+}
+
+.section-tag {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+
+.section-tag::after {
+  content: "";
+  width: min(110px, 12vw);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(244, 197, 66, .65), transparent);
+}
+
+.book-section, .book-trailer, .romance-section, .adventures, .reviews,
+.universe-explore, .universe-links, .place-note, .couple-section,
+.secondary-section, .villain-section, .others-section, .supporting,
+.world, .featured-quotes {
+  border-top-color: rgba(247, 234, 208, .13);
+}
+
+.book-grid, .book-trailer-grid, .romance-grid, .author-grid {
+  gap: clamp(34px, 7vw, 92px);
+}
+
+.book-intro .quote {
+  max-width: 15ch;
+  color: #f7ead0;
+  font-size: clamp(1.8rem, 3vw, 2.85rem);
+  line-height: 1.25;
+}
+
+.book-facts.structured-facts {
+  align-self: start;
+  padding: clamp(26px, 3.4vw, 42px);
+  border: 1px solid var(--panel-line);
+  background: linear-gradient(145deg, var(--soft-gold), rgba(247, 234, 208, .025));
+  box-shadow: 0 22px 45px rgba(0, 0, 0, .15);
+}
+
+.book-facts.structured-facts .fact-group + .fact-group {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(247, 234, 208, .13);
+}
+
+.book-trailer-video, .romance-image {
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .32), 0 0 0 1px rgba(244, 197, 66, .13);
+}
+
+.verse-section { position: relative; overflow: hidden; }
+.verse-section::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 50%;
+  width: min(860px, 120vw);
+  height: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 38%, rgba(244, 197, 66, .1), transparent 63%);
+}
+.verse-section > * { position: relative; z-index: 1; }
+
+.adventure-grid { gap: clamp(12px, 2vw, 24px); }
+.adventure-grid article {
+  border-radius: 3px;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .2);
+}
+
+.universe-explore-grid a, .universe-card-grid a {
+  overflow: hidden;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, .16);
+}
+
+.review-grid blockquote {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: clamp(24px, 3vw, 34px);
+  border-color: rgba(247, 234, 208, .16);
+  background: linear-gradient(145deg, rgba(247, 234, 208, .055), rgba(247, 234, 208, .018));
+}
+.review-grid cite { margin-top: auto; padding-top: 8px; }
+
+.featured-quotes {
+  margin-top: clamp(30px, 5vw, 72px);
+  margin-bottom: clamp(30px, 5vw, 72px);
+  padding-right: clamp(24px, 5vw, 72px);
+  padding-left: clamp(24px, 5vw, 72px);
+  border: 1px solid rgba(244, 197, 66, .16);
+  border-radius: 5px;
+  background: linear-gradient(145deg, rgba(66, 42, 28, .94), rgba(33, 19, 15, .96));
+  box-shadow: 0 26px 55px rgba(0, 0, 0, .18);
+}
+
+.subpage-hero {
+  width: min(89vw, var(--content-width));
+  margin: 0 auto;
+  padding-right: min(18vw, 260px);
+}
+.subpage-hero h1 { text-wrap: balance; }
+.place-card { border: 1px solid rgba(244, 197, 66, .18); border-radius: 3px; }
+
+.sample-book {
+  border-radius: 4px;
+  box-shadow: 0 34px 100px rgba(0, 0, 0, .42), 0 0 0 8px rgba(247, 234, 208, .04);
+}
+
+@media (max-width: 700px) {
+  :root { --page-gutter: 6vw; }
+  .site-header { padding: 14px var(--page-gutter); }
+  .section { width: 88vw; padding-top: 72px; padding-bottom: 72px; }
+  .section-tag { margin-bottom: 28px; }
+  .section-tag::after { width: 58px; }
+  .book-facts.structured-facts { padding: 24px 20px; }
+  .book-trailer-grid, .romance-grid, .author-grid { gap: 34px; }
+  .subpage-hero { width: 88vw; padding-right: 0; }
+  .review-grid blockquote { padding: 24px; }
+  .featured-quotes { margin-top: 24px; margin-bottom: 24px; padding-right: 22px; padding-left: 22px; }
+  .sample-book { box-shadow: 0 22px 60px rgba(0, 0, 0, .36), 0 0 0 5px rgba(247, 234, 208, .04); }
+}
